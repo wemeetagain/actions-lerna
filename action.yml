@@ -1,0 +1,14 @@
+name: 'GitHub Action for Lerna'
+description: 'Wraps the lerna CLI to enable common lerna commands'
+branding:
+  icon: 'box'
+  color: 'blue'
+inputs:
+  cmd:
+    description: 'lerna command'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.cmd }}
